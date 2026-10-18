@@ -1,0 +1,100 @@
+/* ===== 1) ตัวแปรสี: แก้สีทั้งเว็บได้ที่นี่ที่เดียว ===== */
+:root {
+  --ink: #1f2a44;      /* สีตัวอักษรหลัก / พื้นหลัง footer */
+  --paper: #f4f7fb;    /* สีพื้นหลังหน้าเว็บ */
+  --card: #ffffff;     /* สีพื้นกล่องเนื้อหา */
+  --accent: #0f8b8d;   /* สีเน้น (ปุ่ม เส้นหัวข้อ) */
+  --gold: #e9b44c;     /* สีดาวของ skill */
+  --line: #d5dde8;     /* สีเส้นขอบตาราง */
+}
+
+/* ===== 2) พื้นฐานทั้งหน้า ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Prompt", "Noto Sans Thai", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+}
+main { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+h1, h2 { margin: 0 0 12px; }
+h2 { border-left: 6px solid var(--accent); padding-left: 12px; }
+a { color: var(--accent); }
+
+/* กล่องเนื้อหาแต่ละส่วน */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* ===== 3) ส่วนโปรไฟล์ (layout แบบ table) ===== */
+.profile-table { border-collapse: collapse; width: 100%; }
+.profile-table td { vertical-align: middle; }
+.profile-table .photo { width: 180px; }
+.profile-table img {
+  width: 160px; height: 160px;
+  border-radius: 50%;          /* ทำรูปให้เป็นวงกลม */
+  object-fit: cover;           /* ครอปรูปไม่ให้เบี้ยว */
+  border: 4px solid var(--accent);
+  background: var(--line);
+  display: block;
+}
+/* Challenge: ทำให้รูปกับข้อความห่างกัน → ใช้ padding-left ที่ช่องข้อความ */
+.profile-table .info { padding-left: 32px; }
+.profile-table .info p { margin: 2px 0; }
+
+/* ===== 4) ปุ่ม ===== */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: var(--ink); }
+
+/* ===== 5) ตาราง Experience และ Skills ===== */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th {
+  background: var(--ink); color: #fff;
+  padding: 8px 12px; text-align: left;
+}
+.data-table td { border: 1px solid var(--line); padding: 8px 12px; }
+.data-table tr:nth-child(even) td { background: var(--paper); }
+
+.skill-table { width: 100%; border-collapse: collapse; }
+.skill-table td { padding: 8px 10px; }
+.stars { color: var(--gold); letter-spacing: 2px; white-space: nowrap; }
+
+/* ===== 6) Footer ===== */
+footer {
+  background: var(--ink); color: #fff;
+  text-align: center; padding: 20px 16px;
+}
+footer a { color: var(--gold); margin: 0 10px; }
+
+/* ===== 7) ฟอร์มหน้า contact ===== */
+.form label { display: block; margin-top: 14px; font-weight: 600; }
+.form input, .form textarea {
+  width: 100%; padding: 10px 12px;
+  border: 1px solid var(--line); border-radius: 8px;
+  font: inherit;
+}
+.form input:focus, .form textarea:focus { outline: 3px solid var(--accent); }
+.form .btn { margin-top: 18px; }
+
+/* ===== 8) มือถือ: จอแคบให้รูปกับข้อความเรียงลงมา ===== */
+@media (max-width: 600px) {
+  .profile-table, .profile-table tbody, .profile-table tr, .profile-table td { display: block; }
+  .profile-table img { margin: 0 auto 16px; }
+  .profile-table .info { padding-left: 0; text-align: center; }
+  .skill-table td { display: inline-block; }
+}

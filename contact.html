@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | My Page v2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"> <!-- ใช้ไฟล์เดียวกับ index.html -->
+</head>
+<body>
+<main>
+  <section class="panel">
+    <h2>ติดต่อฉัน</h2>
+
+    <!-- action เป็นแค่ตัวอย่าง (ยังไม่ส่งจริง) ถ้าอยากให้ส่งจริงใช้บริการเช่น Formspree -->
+    <form class="form" action="#" method="post">
+      <label for="name">ชื่อ</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">อีเมล</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="subject">หัวข้อ</label>
+      <input type="text" id="subject" name="subject">
+
+      <label for="message">ข้อความ</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button class="btn" type="submit">ส่งข้อความ</button>
+    </form>
+
+    <p><a href="index.html">← กลับหน้าหลัก</a></p>
+  </section>
+</main>
+
+<footer>
+  <a href="https://github.com/G" target="_blank">GitHub</a>
+  <a href="index.html">Home</a>
+</footer>
+</body>
+</html>
